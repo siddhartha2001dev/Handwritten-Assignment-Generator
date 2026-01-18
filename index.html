@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Handwritten Assignment Generator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <h1>Handwritten Assignment Generator</h1>
+
+  <!-- Heading input -->
+  <input
+    type="text"
+    id="headingInput"
+    placeholder="Enter Assignment Heading"
+  >
+
+  <br><br>
+
+  <!-- Content input -->
+  <textarea
+    id="inputText"
+    placeholder="Paste your assignment text here..."
+  ></textarea>
+
+  <br>
+
+<div class="controls">
+  <label>Pen Style:</label>
+  <select id="penStyle">
+    <option value="ball">Ball Pen</option>
+    <option value="gel">Gel Pen</option>
+    <option value="fountain">Fountain Pen</option>
+  </select>
+
+  <label>Font:</label>
+  <select id="fontStyle">
+    <option value="caveat">Caveat</option>
+    <option value="patrick">Patrick Hand</option>
+    <option value="dancing">Dancing Script</option>
+  </select>
+</div>
+
+
+  <button onclick="generateAssignment()">Generate Assignment</button>
+  <button onclick="window.print()">Save as PDF</button>
+
+  <!-- Output -->
+  <div id="output"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>

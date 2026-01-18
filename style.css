@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Dancing+Script&display=swap');
+
+
+/* ---------- UI ---------- */
+body {
+  background: #eee;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  text-align: center;
+}
+
+input, textarea {
+  width: 95%;
+  padding: 10px;
+  font-size: 16px;
+}
+
+textarea {
+  height: 150px;
+}
+
+button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+#output {
+  margin-top: 30px;
+}
+
+/* ---------- NOTEBOOK PAGE ---------- */
+.page {
+  width: 210mm;
+  min-height: 297mm;
+  margin: 20px auto;
+  padding: 60px 40px 60px 80px;
+
+  font-family: 'Caveat', cursive;
+  font-size: 22px;
+  line-height: 32px;
+  text-align: left;
+
+  background-color: #fdfcf7;
+
+  /* notebook lines */
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent,
+    transparent 30px,
+    #c5d8ff 31px
+  );
+
+  border-left: 4px solid red;
+  box-shadow: 0 0 10px rgba(0,0,0,0.25);
+}
+
+/* Heading */
+.heading {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 20px;
+  text-decoration: underline;
+}
+
+/* Each handwritten line */
+.page div {
+  height: 32px;
+  line-height: 32px;
+  text-indent: 12px;
+}
+
+/* ---------- PRINT / PDF ---------- */
+@media print {
+  body {
+    background: white;
+  }
+
+  button, input, textarea, h1 {
+    display: none;
+  }
+
+  .page {
+    box-shadow: none;
+    page-break-after: always;
+  }
+
+  @page {
+    margin: 0;
+  }
+}
+
+/* ================= PRINT FIX ================= */
+@media print {
+
+  body {
+    background: white;
+    padding: 0;
+    margin: 0;
+  }
+
+  /* 🔥 UI HIDE */
+  h1,
+  input,
+  textarea,
+  button {
+    display: none !important;
+  }
+
+  /* ONLY NOTEBOOK PAGE */
+  #output {
+    margin: 0;
+  }
+
+  .page {
+    margin: 0 auto;
+    box-shadow: none;
+    page-break-after: always;
+
+    /* FORCE GRID LINES */
+    background-image: repeating-linear-gradient(
+      to bottom,
+      transparent,
+      transparent 30px,
+      #c5d8ff 31px
+    ) !important;
+
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  @page {
+    size: A4;
+    margin: 0;
+  }
+}
+
+.font-caveat {
+  font-family: 'Caveat', cursive;
+}
+
+.font-patrick {
+  font-family: 'Patrick Hand', cursive;
+}
+
+.font-dancing {
+  font-family: 'Dancing Script', cursive;
+}
+
+.pen-ball div {
+  color: #222;
+  text-shadow: 0 0 0.4px rgba(0,0,0,0.4);
+}
+
+.pen-gel div {
+  color: #111;
+  text-shadow: 0 0 0.8px rgba(0,0,0,0.6);
+}
+
+.pen-fountain div {
+  color: #1a1a1a;
+  text-shadow: 0.4px 0.4px 0 rgba(0,0,0,0.5);
+}
+
+@media print {
+  .controls {
+    display: none !important
+  }
+}
